@@ -1,0 +1,41 @@
+/* Admin-specific input styling */
+.admin-input {
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: rgba(50, 71, 92, 0.75);
+  width: 100%;
+}
+
+.admin-input::placeholder {
+  color: rgba(50, 71, 92, 0.6);
+}
+
+/* Remove autofill styles */
+.admin-input:-webkit-autofill,
+.admin-input:-webkit-autofill:hover,
+.admin-input:-webkit-autofill:focus,
+.admin-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: rgba(50, 71, 92, 0.75) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.admin-input:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.admin-input::selection {
+  background: rgba(105, 108, 255, 0.1);
+  color: rgba(50, 71, 92, 0.75);
+}
+
+.admin-input::-moz-selection {
+  background: rgba(105, 108, 255, 0.1);
+  color: rgba(50, 71, 92, 0.75);
+}

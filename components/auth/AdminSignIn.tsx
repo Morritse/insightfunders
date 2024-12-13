@@ -8,6 +8,7 @@ import { useState } from "react";
 import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
+import '@/styles/admin.css';
 
 const adminSignInSchema = z.object({
   email: z.string().email("Please enter a valid email"),
@@ -91,7 +92,7 @@ export default function AdminSignIn() {
                           <input
                             type="email"
                             placeholder="Email"
-                            className="h-full w-full"
+                            className="h-full w-full admin-input"
                             {...field}
                           />
                         </div>
@@ -112,7 +113,7 @@ export default function AdminSignIn() {
                           <input
                             type={passwordVisible ? "text" : "password"}
                             placeholder="Password"
-                            className="flex-1 h-full"
+                            className="flex-1 h-full admin-input"
                             {...field}
                           />
                           <button
