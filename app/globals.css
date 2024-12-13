@@ -1,231 +1,81 @@
-body {
-  font-family: "SF Pro Display", sans-serif;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500&family=Inter:wght@600&display=swap');
+
+:root {
+  --light-components-input-text-font-weight: 400;
+  --light-components-input-text-font-size: 16px;
+  --light-components-input-text-letter-spacing: 0.15px;
+  --light-components-input-text-line-height: 24px;
+  --light-components-input-text-font-style: normal;
+}
+
+/* Remove autofill styles but keep selection */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  -webkit-text-fill-color: rgba(50, 71, 92, 0.75) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Clean input styling */
 input {
+  background: transparent !important;
+  border: none !important;
   outline: none !important;
-  outline-color: transparent !important;
-  border-color: transparent !important;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.15px;
+  color: rgba(50, 71, 92, 0.75);
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input:focus {
+  outline: none !important;
   box-shadow: none !important;
-  -webkit-box-shadow: none !important;
 }
 
-.scroll-jump {
-  scroll-snap-type: y mandatory;
+input::selection {
+  background: rgba(105, 108, 255, 0.1);
+  color: rgba(50, 71, 92, 0.75);
 }
 
-.scroll-align {
-  scroll-snap-align: start;
-  height: 100vh;
-  scroll-snap-stop: always;
+input::-moz-selection {
+  background: rgba(105, 108, 255, 0.1);
+  color: rgba(50, 71, 92, 0.75);
 }
 
-.scroll-none {
-  scroll-snap-align: none;
-  height: auto;
+input::placeholder {
+  color: rgba(50, 71, 92, 0.6);
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+.auth-card-shadow {
+  box-shadow: 0px 2px 6px 4px rgba(50, 71, 92, 0.02);
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.hide-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+.auth-button-shadow {
+  box-shadow: 0px 1px 4px 2px rgba(50, 71, 92, 0.02);
 }
 
-.mt-0imp {
-  margin-top: 0 !important;
+.auth-divider {
+  height: 0;
+  border: 1px solid rgba(50, 71, 92, 0.12);
 }
 
-.notifications::-webkit-scrollbar {
-  width: 5px;
+.auth-text {
+  font-family: 'Public Sans', sans-serif;
+  letter-spacing: 0.15px;
+  line-height: 24px;
 }
 
-.notifications::-webkit-scrollbar-track {
-  background: #f1f1f1;
+.auth-heading {
+  font-family: 'Inter', sans-serif;
+  color: rgba(50, 71, 92, 0.87);
 }
-
-.notifications::-webkit-scrollbar-thumb {
-  background: #888;
-}
-
-.notifications::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.animate-banner-hover:hover {
-  animation-play-state: paused;
-}
-
-.firstDelay {
-  animation-delay: 2s;
-  transition-delay: 2s;
-}
-
-.secondDelay {
-  animation-delay: 4s;
-  transition-delay: 4s;
-}
-
-.whiteText {
-  color: white !important;
-}
-
-.tableShadow {
-  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
-  -webkit-box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
-}
-
-.radioBlack * {
-  border-color: black !important;
-}
-
-@media (min-width: 1024px) {
-  .perspective {
-    perspective: 1400px;
-    perspective-origin: center;
-    position: relative;
-  }
-}
-
-/* signinipfield */
-.selectcard {
-  width: 100%;
-}
-.selectcarddiv {
-  width: 350px;
-}
-
-.ipfield {
-  width: 450px;
-}
-.ipfieldfw {
-  width: 100%;
-}
-.dashboard_dr_cards_1 {
-  width: 30%;
-}
-.dashboard_dr_cards_2 {
-  width: 70%;
-}
-
-.dashboardcont {
-  width: 70%;
-  margin: auto;
-}
-.hamburger {
-  display: none;
-}
-
-@media (max-width: 485px) {
-  .ipfield {
-    width: 100%;
-  }
-  .selectcarddiv {
-    width: 100%;
-  }
-  .signinformipfield {
-    width: 90%;
-  }
-  .chartcontenttext {
-    font-size: 12px;
-    line-height: 140%;
-  }
-  .dashboardtablehead {
-    font-size: 16px;
-  }
-}
-@media (max-width: 1030px) {
-  .logoutButn {
-    margin-right: 20px;
-    margin-left: auto;
-  }
-  .userName {
-    z-index: 1;
-    color: white;
-  }
-  .navbarmobilemenu {
-    padding-right: 20px;
-    padding-left: 20px;
-  }
-  .dashboarmaincontiner {
-    padding-bottom: 70px;
-    padding-top: 100px;
-    min-height: 100vh !important;
-  }
-  .logoDiv {
-    position: absolute;
-    top: 30px;
-    left: 20px;
-  }
-  .sidebardashboardMenuLinks {
-    display: flex;
-    flex-direction: row;
-    margin: auto;
-    margin-bottom: 20px;
-  }
-  .hamburger {
-    display: block !important;
-  }
-  .sidebardashboard {
-    display: flex;
-    flex-direction: row;
-    position: absolute;
-    width: 100%;
-    top: 0;
-    height: 180px;
-    z-index: 0;
-  }
-  .sidebardashboardopen {
-    position: absolute;
-    left: 0;
-    width: 50%;
-  }
-}
-@media (max-width: 1440px) {
-  .dashboardcont {
-    width: 90%;
-  }
-  .userinfospacingcont {
-    padding-top: 150px;
-  }
-}
-
-/* styles/globals.css */
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/sf-pro-display/SFProDisplayRegular.OTF") format("opentype");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/sf-pro-display/SFProDisplayBold.OTF") format("opentype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/sf-pro-display/SFProDisplayMedium.OTF") format("opentype");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "SF Pro Display";
-  src: url("/fonts/sf-pro-display/SFProDisplayBlackItalic.OTF")
-    format("opentype");
-  font-weight: 900;
-  font-style: italic;
-}
-
-/* Add more weights and styles as needed */
