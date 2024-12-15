@@ -36,11 +36,11 @@ export default function AdminSignIn() {
   }
 
   return (
-    <div className="w-full h-screen bg-[#F5F5F9] flex justify-center items-start overflow-hidden">
-      <div className="flex-1 h-screen flex flex-col justify-center items-center">
-        <div className="relative w-[1440px] h-[1024px]">
+    <div className="w-full min-h-screen bg-[#F5F5F9] flex justify-center items-start py-8">
+      <div className="flex-1 flex flex-col justify-center items-center">
+        <div className="relative w-full max-w-[1440px] min-h-[1024px] px-4">
           {/* Top Illustration */}
-          <div className="absolute w-[148px] h-[148px] left-[846px] top-[169px]">
+          <div className="absolute w-[148px] h-[148px] right-1/4 top-[169px] hidden lg:block">
             <Image
               src="/images/top-illustration.svg"
               alt="Decoration"
@@ -51,19 +51,11 @@ export default function AdminSignIn() {
           </div>
 
           {/* Login Card */}
-          <div style={{ 
-            height: '536.46px',
-            left: '495px',
-            top: '220px',
-            padding: '32px',
-            gap: '32px'
-          }} 
-          className="absolute bg-white rounded-[8px] overflow-hidden shadow-light-elevation-6 flex flex-col justify-center items-center">
+          <div className="w-full max-w-[450px] mx-auto lg:absolute lg:left-1/3 lg:top-[220px] bg-white rounded-[8px] shadow-light-elevation-6 flex flex-col justify-center items-center p-8">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="w-full flex flex-col">
                 {/* Header */}
-                <div style={{ height: '131px', paddingBottom: '18px', gap: '25px' }}
-                     className="flex flex-col items-center">
+                <div className="flex flex-col items-center mb-8 gap-6">
                   <div className="flex items-center gap-2">
                     <Image
                       src="/images/logo.svg"
@@ -76,7 +68,7 @@ export default function AdminSignIn() {
                       Insight Funders
                     </div>
                   </div>
-                  <div className="w-[394px] text-center auth-text text-[rgba(50,71,92,0.60)]">
+                  <div className="w-full max-w-[394px] text-center auth-text text-[rgba(50,71,92,0.60)]">
                     Admin Portal
                   </div>
                 </div>
@@ -135,12 +127,11 @@ export default function AdminSignIn() {
                 />
 
                 {/* Login Button */}
-                <div style={{ height: '42px', borderRadius: '8px' }}
-                     className="mt-4 bg-[#696CFF] auth-button-shadow overflow-hidden flex flex-col justify-center items-center">
+                <div className="mt-4 h-[42px] bg-[#696CFF] rounded-[8px] auth-button-shadow">
                   <button
                     type="submit"
                     disabled={loading}
-                    className="px-[26px] py-2 w-full h-full"
+                    className="w-full h-full px-[26px] py-2"
                   >
                     {loading ? (
                       <Loader2 className="animate-spin mx-auto text-white" />
